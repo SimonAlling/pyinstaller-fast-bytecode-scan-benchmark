@@ -1,0 +1,20 @@
+[project]
+name = "pyinstaller-fast-bytecode-scan-benchmark"
+version = "0"
+requires-python = ">=3.8"
+dependencies = [
+    # PyInstaller itself is installed from a checkout instead, but this locks its dependencies, e.g. the hooks in
+    # pyinstaller-hooks-contrib, which affect the build output.
+    "pyinstaller",
+    # The workload: popular pure-Python packages with large import graphs.
+    "docutils",
+    "jinja2",
+    "pygments",
+    "requests",
+    "rich",
+    "sqlalchemy",
+    "django>=4.2.30",
+]
+
+[tool.uv]
+package = false
